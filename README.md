@@ -1,20 +1,35 @@
-# Getting Started
+# Introdução ao Projeto ToDo
 
-### Reference Documentation
+### Documentação referente
 
-For further reference, please consider the following sections:
+Tecnologias utilizadas:
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.6.0/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.6.0/maven-plugin/reference/html/#build-image)
-* [Spring Web Services](https://docs.spring.io/spring-boot/docs/2.6.0/reference/htmlsingle/#boot-features-webservices)
+* [Java 11](https://www.oracle.com/br/java/technologies/javase/jdk11-archive-downloads.html)
+* [PostgreSQL 10](https://www.postgresql.org/download/)
+* [Maven](https://maven.apache.org/)
+* [Tomcat](http://tomcat.apache.org/)
 * [Spring Data JPA](https://docs.spring.io/spring-boot/docs/2.6.0/reference/htmlsingle/#boot-features-jpa-and-spring-data)
 * [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.6.0/reference/htmlsingle/#using-boot-devtools)
 
 ### Guides
 
-The following guides illustrate how to use some features concretely:
+O Seguintes Endpoint foram implementados:
 
-* [Producing a SOAP web service](https://spring.io/guides/gs/producing-web-service/)
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
+* Cadastrar Usuário: POST http://localhost:8080/users
+* Listar Usuários: GET http://localhost:8080/users
+* Consultar Usuário: GET http://localhost:8080/users/{id}
+* Listar Tarefas: GET http://localhost:8080/tasks
+* Listar Tarefas do usuário: GET http://localhost:8080/users/{idUser}/tasks
+* Cadastrar Tarefa do usuário: POST http://localhost:8080/users/{idUser}/tasks
+* Atualizar Tarefa do usuário: PUT http://localhost:8080/users/{idUser}/tasks/{taskId}
+* Excluir Tarefa do usuário: DELETE http://localhost:8080/users/{idUser}/tasks/{taskId}
+* Associar uma Tarefa a outra: GET http://localhost:8080/tasks/2/attach/5
+* Desassociar uma Tarefa a outra: GET http://localhost:8080/tasks/2/attach/5
 
+### Implantação para Teste (Sugestão)
+
+* Contratar 2 Droplet na Digital Ocean, 1 para aplicação Backend e outra para o banco de dados
+* Em uma das intâncias, configurar o tomcat no servidor para comportar o código
+* Montar um Droplet em Marketplace com a opção Banco de Dados Postgres
+* No projeto Web atualizar o arquivo application.properties do spring com as informação do 
+banco de dados
