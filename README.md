@@ -23,8 +23,8 @@ O Seguintes Endpoint foram implementados:
 * Cadastrar Tarefa do usuário: POST http://localhost:8080/users/{idUser}/tasks
 * Atualizar Tarefa do usuário: PUT http://localhost:8080/users/{idUser}/tasks/{taskId}
 * Excluir Tarefa do usuário: DELETE http://localhost:8080/users/{idUser}/tasks/{taskId}
-* Associar uma Tarefa a outra: GET http://localhost:8080/tasks/2/attach/5
-* Desassociar uma Tarefa a outra: GET http://localhost:8080/tasks/2/attach/5
+* Associar uma Tarefa a outra: GET http://localhost:8080/tasks/{idUser}/attach/{taskId}
+* Desassociar uma Tarefa a outra: GET http://localhost:8080/tasks/{idUser}/attach/{taskId}
 
 ### Implantação para Teste (Sugestão)
 
